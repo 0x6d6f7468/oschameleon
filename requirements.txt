@@ -1,4 +1,5 @@
 requests==2.21.0
 netifaces==0.10.9
 scapy==2.4.2
+psutil>=5.7.0
 gevent
