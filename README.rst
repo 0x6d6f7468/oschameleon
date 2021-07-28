@@ -1,6 +1,3 @@
-.. image:: https://travis-ci.org/mushorg/oschameleon.svg?branch=master
-    :target: https://travis-ci.org/mushorg/oschameleon
-
 ===========
 OSChameleon
 ===========
@@ -12,15 +9,15 @@ Description: Fools the probes of nmap scanner
 
 Prerequisites:
  * Linux (tested with Debian/Ubuntu)
- * Python 2.7+
- * python-nfqueue=0.6 (apt-get install python-nfqueue)
+ * Python 2.7+, 3.6+
+ * python-nfqueue=0.6 (currently need to install manually to
  * requirements.txt
 
 Recorded logs are stored to:
     /var/log/honeypot/
 
 Usage:
-    python2.7 oschameleonRun.py
+    sudo python3.6 oschameleonRun.py
         --template      path to the nmap fingerprint, either absolute or relative to the execution folder
         --server        sets an exception for the iptables to access over ssh. the ssh port should either be changed to 63712 or the port number in stack_packet/helper.py
         --public_ip     either fetches the server public ip or gets the ip set for the interface
