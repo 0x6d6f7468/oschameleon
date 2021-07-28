@@ -10,7 +10,7 @@ Description: Fools the probes of nmap scanner
 Prerequisites:
  * Linux (tested with Debian/Ubuntu)
  * Python 2.7+, 3.6+
- * python-nfqueue=0.6 (currently need to install manually to
+ * python-nfqueue=0.6 (currently need to install library manually from https://github.com/sruon/nfqueue-bindings-py3)
  * requirements.txt
 
 Recorded logs are stored to:
