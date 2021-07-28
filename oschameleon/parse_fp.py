@@ -285,7 +285,7 @@ def get_os_pattern(fprint_template, debug):
     fp.clear()
 
     for line in data:
-        line = line.strip()
+        line = line.strip().decode()
         category, result = line.split('(', 1)
         result = result[:-1]
         fp[category] = dict()

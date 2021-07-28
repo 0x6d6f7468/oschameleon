@@ -144,6 +144,7 @@ class OSFuscation(object):
                 workers.append(gevent.spawn(cls.worker, q))
             gevent.joinall(workers)
         except KeyboardInterrupt:
+            print("2")
             # on exit clean up
             q.unbind(socket.AF_INET)
             q.close()

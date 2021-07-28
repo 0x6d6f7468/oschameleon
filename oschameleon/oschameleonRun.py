@@ -5,9 +5,12 @@ Created on 01.12.2016
 '''
 import argparse
 import gevent.monkey
+#gevent.monkey.patch_all()
 import grp
 import os
 import pwd
+
+gevent.monkey.patch_all()
 
 from osfuscation import OSFuscation
 from session.log import Log
@@ -31,8 +34,6 @@ class OSChameleon(object):
         self.parser.add_argument('--interface', metavar='eth0', help='network interface', default='eth0')
         self.parser.add_argument('--debug', metavar='True/False', help='verbose debugging output', default=False)
         self.args = self.parser.parse_args()
-
-        gevent.monkey.patch_all()
 
         if self.args.debug == 'True':
             self.args.debug = True
@@ -65,15 +66,15 @@ class OSChameleon(object):
         wanted_gid = grp.getgrnam(gid_name)[2]
 
         pid = gevent.fork()
-        # print "root_fork : drop_privil  :  pid   ",pid
+        # print("root_fork : drop_privil  :  pid   ", pid)
         if pid == 0:
             # child
-            # print  ('starting child process')
+            # print('starting child process')
             child_process = gevent.spawn(self.root_process)
             child_process.join()
-            # print  ('Child done:', child_process.successful())
+            # print('Child done:', child_process.successful())
             flush_tables()
-            # print  ('Child exit')
+            # print('Child exit')
         else:
             # parent
             os.setgid(wanted_gid)
@@ -85,7 +86,7 @@ class OSChameleon(object):
             while True:
                 try:
                     gevent.sleep(1)
-                    # print ('Parent: ping')
+                    #print('Parent: ping')
                 except KeyboardInterrupt:
                     break
 
