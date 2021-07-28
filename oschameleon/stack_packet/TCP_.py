@@ -7,10 +7,8 @@ Created on 24.09.2016
 
 import random
 
-from IP_ import ReplyPacket
-from IP_ import reverse_crc
-from helper import drop_packet
-from helper import forward_packet
+from stack_packet.IP_ import ReplyPacket, reverse_crc
+from stack_packet.helper import drop_packet, forward_packet
 from scapy.all import IP, TCP, send  # @UnresolvedImport 
 
 

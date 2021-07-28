@@ -5,9 +5,8 @@ Created on 24.09.2016
 @author: manuel
 '''
 
-from ICMP_ import send_ICMP_reply
-from helper import drop_packet
-from helper import forward_packet
+from stack_packet.ICMP_ import send_ICMP_reply
+from stack_packet.helper import drop_packet, forward_packet
 from scapy.all import IP, UDP  # @UnresolvedImport
 
 

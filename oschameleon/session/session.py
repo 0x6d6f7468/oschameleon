@@ -6,7 +6,7 @@ Created on 02.12.2016
 
 from datetime import datetime, timedelta
 import logging
-from ext_ip import Ext_IP
+from session.ext_ip import Ext_IP
 from netifaces import AF_INET, AF_INET6, AF_LINK, AF_PACKET, AF_BRIDGE
 import netifaces as ni
 

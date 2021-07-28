@@ -26,14 +26,14 @@ class Log(object):
     def remote_logging(self, name, server):
         rootLogger = logging.getLogger('')
         rootLogger.setLevel(logging.DEBUG)
-        print server
+        print(server)
         socketHandler = logging.handlers.SocketHandler(server, logging.handlers.DEFAULT_TCP_LOGGING_PORT)
         # don't bother with a formatter, since a socket handler sends the event as
         # an unformatted pickle
         rootLogger.addHandler(socketHandler)
 
     def py_logging(self, name):
-        # print ("log", name)
+        # print("log", name)
         path = "/var/log/honeypot/"
         self.folder_exist(path)
         logFile = path + name + ".log"

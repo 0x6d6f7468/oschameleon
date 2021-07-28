@@ -277,7 +277,7 @@ def set_tcp_ttl(os_pattern, fp):
 
 def get_os_pattern(fprint_template, debug):
     os_pattern = OSPatternTemplate()
-    # print os_pattern.TTL
+    # print(os_pattern.TTL)
     with open(fprint_template, 'rb') as fh:
         data = fh.readlines()
 
@@ -359,4 +359,4 @@ def get_os_pattern(fprint_template, debug):
 
 
 if __name__ == '__main__':
-    print get_os_pattern('SIMATIC_300_PLC.txt', False)
+    print(get_os_pattern('SIMATIC_300_PLC.txt', False))

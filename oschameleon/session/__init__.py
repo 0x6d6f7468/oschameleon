@@ -1,5 +1,5 @@
 
-from session import Session
+from session.session import Session
 
 session_ = Session()
 
